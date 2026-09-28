@@ -31,6 +31,8 @@
     --radius-sm: 0.25rem;
     --radius-lg: 0.5rem;
     --perspective-distant: 1200px;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -296,6 +298,9 @@
   .transform-\[rotateY\(20deg\)_rotateX\(20deg\)_rotateZ\[20deg\]\] {
     transform: rotateY(20deg) rotateX(20deg) rotateZ[20deg];
   }
+  .transform-\[rotateY\(20deg\)_rotateX\(30deg\)_rotateZ\(-4deg\)\] {
+    transform: rotateY(20deg) rotateX(30deg) rotateZ(-4deg);
+  }
   .transform-\[rotateY\(20deg\)_rotateX\(30deg\)_rotateZ\(-5deg\)\] {
     transform: rotateY(20deg) rotateX(30deg) rotateZ(-5deg);
   }
@@ -501,6 +506,19 @@
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
   }
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .duration-300 {
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
+  }
+  .duration-500 {
+    --tw-duration: 500ms;
+    transition-duration: 500ms;
+  }
   .perspective-\[4000px\] {
     perspective: 4000px;
   }
@@ -529,6 +547,14 @@
     @supports (color: color-mix(in lab, red, red)) {
       .hover\:bg-black\/80:hover {
         background-color: color-mix(in oklab, var(--color-black) 80%, transparent);
+      }
+    }
+    .hover\:bg-black\/90:hover {
+      background-color: color-mix(in srgb, #000 90%, transparent);
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .hover\:bg-black\/90:hover {
+        background-color: color-mix(in oklab, var(--color-black) 90%, transparent);
       }
     }
     .hover\:bg-gray-200:hover {
@@ -749,6 +775,10 @@
   inherits: false;
   initial-value: solid;
 }
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -792,6 +822,7 @@
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
       --tw-outline-style: solid;
+      --tw-duration: initial;
     }
   }
 }

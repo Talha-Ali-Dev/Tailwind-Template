@@ -18,6 +18,7 @@
     --color-green-600: oklch(62.7% 0.194 149.214);
     --color-gray-200: oklch(92.8% 0.006 264.531);
     --color-gray-300: oklch(87.2% 0.01 258.338);
+    --color-gray-950: oklch(13% 0.028 261.692);
     --color-neutral-50: oklch(98.5% 0 none);
     --color-neutral-100: oklch(97% 0 none);
     --color-neutral-200: oklch(92.2% 0 none);
@@ -25,6 +26,7 @@
     --color-neutral-400: oklch(70.8% 0 none);
     --color-neutral-500: oklch(55.6% 0 none);
     --color-neutral-600: oklch(43.9% 0 none);
+    --color-neutral-950: oklch(14.5% 0 none);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -279,6 +281,9 @@
   .size-20 {
     width: calc(var(--spacing) * 20);
     height: calc(var(--spacing) * 20);
+  }
+  .h-7 {
+    height: calc(var(--spacing) * 7);
   }
   .h-\[250px\] {
     height: 250px;
@@ -749,6 +754,18 @@
     --tw-duration: 500ms;
     transition-duration: 500ms;
   }
+  .\[--pattern-fg\:var\(--color-gray-950\)\]\/5 {
+    --pattern-fg: color-mix(in srgb, oklch(13% 0.028 261.692) 5%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      --pattern-fg: color-mix(in oklab, var(--color-gray-950) 5%, transparent);
+    }
+  }
+  .\[--pattern-fg\:var\(--color-neutral-950\)\]\/5 {
+    --pattern-fg: color-mix(in srgb, oklch(14.5% 0 none) 5%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      --pattern-fg: color-mix(in oklab, var(--color-neutral-950) 5%, transparent);
+    }
+  }
   .perspective-\[4000px\] {
     perspective: 4000px;
   }
@@ -829,6 +846,19 @@
     }
     .lg\:text-\[48px\] {
       font-size: 48px;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    .dark\:bg-gray-950 {
+      background-color: var(--color-gray-950);
+    }
+    .dark\:\[--pattern-fg\:var\(--color-white\)\]\/10 {
+      --pattern-fg: color-mix(in srgb, #fff 10%, transparent);
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .dark\:\[--pattern-fg\:var\(--color-white\)\]\/10 {
+        --pattern-fg: color-mix(in oklab, var(--color-white) 10%, transparent);
+      }
     }
   }
 }

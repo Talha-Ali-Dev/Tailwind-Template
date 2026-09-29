@@ -91,7 +91,7 @@
         </section>
 
 
-        <section class="cards grid grid-col-1 md:grid-cols-3 max-w-7xl mx-auto gap-4 my-4">
+        <section class="cards grid grid-col-1 md:grid-cols-3 max-w-7xl mx-auto gap-10 my-10">
 
             <div class="flex justify-between items-baseline-last col-span-1 md:col-span-3">
 
@@ -230,11 +230,11 @@
             </div>
 
             <div
-                class="bg-neutral-50 rounded-lg overflow-hidden perspective-distant h-full w-full border border-neutral-200 shadow-2xl">
+                class="bg-neutral-50 rounded-lg overflow-hidden perspective-distant h-full w-full border border-neutral-200 shadow-2xl group transition-all duration-500">
 
                 <!-- Cards area -->
-                <div
-                    class="relative h-[250px] mask-b-from-50% shadow-2xl">
+
+                <div class="relative h-[250px] mask-b-from-50% shadow-2xl">
 
                     <div class=" p-3 rounded-lg
                    border border-neutral-300
@@ -252,22 +252,74 @@
                                 234 ~ @
                             </div>
 
-                            <div class="bg-red [--pattern-fg:var(--color-neutral-950)]/5 dark:bg-gray-950 dark:[--pattern-fg:var(--color-white)]/10 ">
+                        </div>
+
+                        <div
+                            class="[--pattern-fg:var(--color-neutral-950)]/5 h-50 relative rotate-x-40 rotate-y-20 rotate-z-[-20deg]">
+
+
+                            <div class="bg-neutral-200 relative h-40 my-2 rounded-2xl">
+                                <div
+                                    class="absolute inset-0 -right-px bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:15px_15px] bg-fixed">
+
+                                </div>
+                            </div>
+
+                            <div
+                                class="absolute inset-0 w-full h-full bg-white rounded-2xl border border-neutral-200 text-sm translate-x-5 group-hover:translate-x-0 transition-all duration-500">
+
+                                <div class="border-b border-neutral-200 flex justify-between gap-5 p-3">
+
+                                    <div class="flex justify-start gap-5">
+                                        <span>
+                                            <img src="assets/check.png" alt="" height="20" width="20">
+                                        </span>
+                                        <span>
+                                            Fetching Data ------
+                                        </span>
+                                    </div>
+
+                                    <div>
+                                        100~
+                                    </div>
+                                </div>
+
+                                <div class="border-b border-neutral-200 flex justify-between gap-5 p-3">
+
+                                    <div class="flex justify-start gap-5">
+                                        <span>
+                                            <img src="assets/check.png" alt="" height="20" width="20">
+                                        </span>
+                                        <span>
+                                            Fetching Data ------
+                                        </span>
+                                    </div>
+
+                                    <div>
+                                        100~
+                                    </div>
+                                </div>
+
+                                <div class="border-b border-neutral-200 flex justify-between gap-5 p-3">
+
+                                    <div class="flex justify-start gap-5">
+                                        <span>
+                                            <img src="assets/check.png" alt="" height="20" width="20">
+                                        </span>
+                                        <span>
+                                            Fetching Data ------
+                                        </span>
+                                    </div>
+
+                                    <div>
+                                        100~
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
 
-                        <p class="text-neutral-500 text-sm font-medium mt-3 text-neutral-50/10">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Nam, repellat.
-                        </p>
 
-                        <div class="text-xs text-neutral-300 font-semibold
-                       flex items-center gap-2 flex-wrap mt-2">
-                            <span>Google-Ads</span>
-                            <span>Saas</span>
-                            <span>Web Development</span>
-                        </div>
 
                     </div>
 
@@ -327,13 +379,7 @@
 
             </div>
 
-
-
-
-
-
         </section>
-
 
 
     </main>
